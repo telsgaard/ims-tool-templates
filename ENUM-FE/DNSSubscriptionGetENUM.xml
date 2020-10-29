@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cai3="http://schemas.ericsson.com/cai3g1.2/" xmlns:ns="http://schemas.ericsson.com/ema/UserProvisioning/IPWorks/5.0/">
+   <soapenv:Header>
+      <cai3:SessionId>${SessionId}</cai3:SessionId>
+   </soapenv:Header>
+   <soapenv:Body>
+      <cai3:Get>
+         <cai3:MOType>DNSSubscription@http://schemas.ericsson.com/ema/UserProvisioning/IPWorks/5.0/</cai3:MOType>
+         <cai3:MOId>
+            <ns:msisdn>tel:${e164}</ns:msisdn>
+         </cai3:MOId>
+      </cai3:Get>
+   </soapenv:Body>
+</soapenv:Envelope>

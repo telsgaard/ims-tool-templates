@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cai3="http://schemas.ericsson.com/cai3g1.2/" xmlns:hss="http://schemas.ericsson.com/ma/HSS/">
+   <soapenv:Header>
+      <cai3:SessionId>${SessionId}</cai3:SessionId>
+   </soapenv:Header>
+   <soapenv:Body>
+      <cai3:Set>
+         <cai3:MOType>IMSAssociation@http://schemas.ericsson.com/ma/HSS/</cai3:MOType>
+         <cai3:MOId>
+            <hss:associationId>${subscriberId}</hss:associationId>
+         </cai3:MOId>
+         <cai3:MOAttributes>
+            <hss:SetIMSAssociation associationId="${subscriberId}">
+               <hss:publicData publicIdValue="${publicIdValue}">
+                  <hss:publicIdValue>${publicIdValue}</hss:publicIdValue>
+                  <hss:privateUserId>${privateUserId}</hss:privateUserId>
+                  <hss:implicitRegSet>${implicitRegSet}</hss:implicitRegSet>
+                  <hss:isDefault>${isDefault}</hss:isDefault>
+                  <hss:serviceProfileId>${serviceProfileId}</hss:serviceProfileId>
+                  <hss:sessionBarringInd>false</hss:sessionBarringInd>
+               </hss:publicData>
+            </hss:SetIMSAssociation>
+         </cai3:MOAttributes>
+      </cai3:Set>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,26 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cai3="http://schemas.ericsson.com/cai3g1.2/" xmlns:ns="http://schemas.ericsson.com/ema/UserProvisioning/IPWorks/5.0/">
+   <soapenv:Header>
+      <cai3:SessionId>${SessionId}</cai3:SessionId>
+   </soapenv:Header>
+   <soapenv:Body>
+      <cai3:Create>
+         <cai3:MOType>DNSSubscription@http://schemas.ericsson.com/ema/UserProvisioning/IPWorks/5.0/</cai3:MOType>
+         <cai3:MOId>
+            <ns:msisdn>tel:${e164}</ns:msisdn>
+         </cai3:MOId>
+         <cai3:MOAttributes>
+            <ns:createDNSSubscription msisdn="tel:${e164}">
+               <ns:msisdn>tel:${e164}</ns:msisdn>
+               <ns:records publicId="${publicIdValue}">
+                  <ns:publicId>${publicIdValue}</ns:publicId>
+                  <ns:flags>nu</ns:flags>
+                  <ns:order>10</ns:order>
+                  <ns:preference>10</ns:preference>
+                  <ns:service>E2U-sip</ns:service>
+               </ns:records>
+            </ns:createDNSSubscription>
+         </cai3:MOAttributes>
+      </cai3:Create>
+   </soapenv:Body>
+</soapenv:Envelope>
+lope>
