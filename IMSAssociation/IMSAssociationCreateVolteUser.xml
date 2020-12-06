@@ -1,0 +1,65 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cai3="http://schemas.ericsson.com/cai3g1.2/" xmlns:hss="http://schemas.ericsson.com/ma/HSS/">
+   <soapenv:Header>
+      <cai3:SessionId>${SessionId}</cai3:SessionId>
+   </soapenv:Header>
+   <soapenv:Body>
+      <cai3:Create>
+         <cai3:MOType>IMSAssociation@http://schemas.ericsson.com/ma/HSS/</cai3:MOType>
+         <cai3:MOId>
+            <hss:associationId>${subscriberId}</hss:associationId>
+         </cai3:MOId>
+         <cai3:MOAttributes>
+            <hss:CreateIMSAssociation associationId="${subscriberId}">
+               <hss:associationId>${subscriberId}</hss:associationId>
+               <hss:chargingProfId>VoLTE</hss:chargingProfId>
+               <hss:isPsi>false</hss:isPsi>
+               <hss:privateUser privateUserId="${privateUserId}">
+                  <hss:privateUserId>${privateUserId}</hss:privateUserId>
+				  <hss:userPassword>0000</hss:userPassword>
+                  <hss:allowedAuthMechanism>DIGEST</hss:allowedAuthMechanism>
+				  <hss:userImsi>${imsi}</hss:userImsi>
+                  <hss:msisdn>${msisdn}</hss:msisdn>
+                  <hss:ssoMsisdn ssoMsisdn="${msisdn}">
+                    <hss:ssoMsisdn>${msisdn}</hss:ssoMsisdn>
+                  </hss:ssoMsisdn>
+               </hss:privateUser>
+               <hss:publicData publicIdValue="${publicIdValue}">
+                  <hss:publicIdValue>${publicIdValue}</hss:publicIdValue>
+                  <hss:privateUserId>${privateUserId}</hss:privateUserId>
+				  <hss:xcapAllowed>true</hss:xcapAllowed>
+                  <hss:implicitRegSet>1</hss:implicitRegSet>
+                  <hss:isDefault>true</hss:isDefault>
+                  <hss:serviceProfileId>${serviceProfileId}</hss:serviceProfileId>
+                  <hss:sessionBarringInd>false</hss:sessionBarringInd>
+               </hss:publicData>
+               <hss:publicData publicIdValue="${publicIdValue}">
+                  <hss:publicIdValue>${publicIdValue}</hss:publicIdValue>
+                  <hss:privateUserId>${privateUserId}</hss:privateUserId>
+				  <hss:xcapAllowed>true</hss:xcapAllowed>
+                  <hss:implicitRegSet>1</hss:implicitRegSet>
+                  <hss:isDefault>false</hss:isDefault>
+                  <hss:serviceProfileId>${serviceProfileId}</hss:serviceProfileId>
+                  <hss:sessionBarringInd>true</hss:sessionBarringInd>
+               </hss:publicData>
+               <hss:publicData publicIdValue="${publicIdValue}">
+                  <hss:publicIdValue>${publicIdValue}</hss:publicIdValue>
+                  <hss:privateUserId>${privateUserId}</hss:privateUserId>
+                  <hss:implicitRegSet>1</hss:implicitRegSet>
+                  <hss:isDefault>true</hss:isDefault>
+                  <hss:serviceProfileId>${serviceProfileId}</hss:serviceProfileId>
+                  <hss:sessionBarringInd>false</hss:sessionBarringInd>
+               </hss:publicData>
+               <hss:subscriberServiceProfile serviceProfileId="${serviceProfileId}">
+                  <hss:serviceProfileId>${serviceProfileId}</hss:serviceProfileId>
+                  <hss:configuredServiceProfile configuredServiceProfileId="${configuredServiceProfileId}">
+                     <hss:configuredServiceProfileId>${configuredServiceProfileId}</hss:configuredServiceProfileId>
+                  </hss:configuredServiceProfile>
+				  <hss:subscribedMediaProfile>99</hss:subscribedMediaProfile>
+                  <hss:maxNumberSessions>99</hss:maxNumberSessions>
+				  <hss:phoneContext>${phoneContext}</hss:phoneContext>
+               </hss:subscriberServiceProfile>
+            </hss:CreateIMSAssociation>
+         </cai3:MOAttributes>
+      </cai3:Create>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,36 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cai3="http://schemas.ericsson.com/cai3g1.2/" xmlns:hss="http://schemas.ericsson.com/ma/HSS/">
+   <soapenv:Header>
+      <cai3:SessionId>${SessionId}</cai3:SessionId>
+   </soapenv:Header>
+   <soapenv:Body>
+      <cai3:Create>
+         <cai3:MOType>IMSAssociation@http://schemas.ericsson.com/ma/HSS/</cai3:MOType>
+         <cai3:MOId>
+            <hss:associationId>${subscriberId}</hss:associationId>
+         </cai3:MOId>
+         <cai3:MOAttributes>
+            <hss:CreateIMSAssociation associationId="{subscriberId}">
+                <hss:associationId>{subscriberId}</hss:associationId>
+                <hss:chargingProfId>Default</hss:chargingProfId>
+                <hss:isPsi>true</hss:isPsi>
+				<hss:asHostingPSI>sip:1.1.1.1:5060</hss:asHostingPSI>
+                <hss:privateUser privateUserId="${privateUserId}">
+					<hss:privateUserId>${privateUserId}</hss:privateUserId>
+                </hss:privateUser>
+			<hss:publicData publicIdValue="${publicIdValue}">
+				<hss:publicIdValue>${publicIdValue}</hss:publicIdValue>
+				<hss:privateUserId>${privateUserId}</hss:privateUserId>
+				<hss:implicitRegSet>0</hss:implicitRegSet>
+				<hss:maxNumberOfContacts>1</hss:maxNumberOfContacts>
+            </hss:publicData>
+			<hss:publicData publicIdValue="${publicIdValue}">
+				<hss:publicIdValue>${publicIdValue}</hss:publicIdValue>
+				<hss:privateUserId>${privateUserId}</hss:privateUserId>
+				<hss:implicitRegSet>0</hss:implicitRegSet>
+				<hss:maxNumberOfContacts>1</hss:maxNumberOfContacts>
+            </hss:publicData>
+           </hss:CreateIMSAssociation>
+         </cai3:MOAttributes>
+      </cai3:Create>
+   </soapenv:Body>
+</soapenv:Envelope>

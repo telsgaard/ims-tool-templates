@@ -6,7 +6,7 @@
     <cai3:Get>
       <cai3:MOType>Subscription@http://schemas.ericsson.com/ema/UserProvisioning/MTAS/</cai3:MOType>
       <cai3:MOId>
-        <mtas:publicId>sip:+299567044@ims.mnc001.mcc290.3gppnetwork.org</mtas:publicId>
+        <mtas:publicId>${publicIdValue}</mtas:publicId>
       </cai3:MOId>
     </cai3:Get>
   </soapenv:Body>

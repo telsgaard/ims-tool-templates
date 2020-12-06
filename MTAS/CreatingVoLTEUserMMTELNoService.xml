@@ -1,0 +1,18 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cai3="http://schemas.ericsson.com/cai3g1.2/" xmlns:mtas="http://schemas.ericsson.com/ema/UserProvisioning/MTAS/">
+   <soapenv:Header>
+      <cai3:SessionId>${SessionId}</cai3:SessionId>
+   </soapenv:Header>
+   <soapenv:Body>
+      <cai3:Create>
+         <cai3:MOType>Subscription@http://schemas.ericsson.com/ema/UserProvisioning/MTAS/</cai3:MOType>
+         <cai3:MOId>
+            <mtas:publicId>${publicIdValue}</mtas:publicId>
+         </cai3:MOId>
+         <cai3:MOAttributes>
+            <mtas:createSubscription publicId="${publicIdValue}">
+               <mtas:publicId>${publicIdValue}</mtas:publicId>
+            </mtas:createSubscription>
+         </cai3:MOAttributes>
+      </cai3:Create>
+   </soapenv:Body>
+</soapenv:Envelope>
